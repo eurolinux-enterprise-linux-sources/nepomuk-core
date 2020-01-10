@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource>
+    <file alias="gpl.tpl">templates/gpl.tpl</file>
+    <file alias="header_safe.tpl">templates/header_safe.tpl</file>
+    <file alias="source_safe.tpl">templates/source_safe.tpl</file>
+  </qresource>
+</RCC>
