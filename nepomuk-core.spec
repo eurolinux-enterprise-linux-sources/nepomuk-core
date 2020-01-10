@@ -9,7 +9,7 @@
 
 Name:    nepomuk-core
 Version: 4.10.5
-Release: 6%{?dist}
+Release: 2%{?dist}
 Summary: Nepomuk Core utilities and libraries
 
 License: LGPLv2 or LGPLv3
@@ -117,9 +117,6 @@ install -p -m644 -D %{SOURCE1} %{buildroot}%{_prefix}/lib/sysctl.d/nepomuk-inoti
 install -p -m644    %{SOURCE1} ./nepomuk-inotify.conf
 %endif
 
-# fix multilib
-sed -i -e 's!QUERYINTERFACE_H_[0-9]*!QUERYINTERFACE_H!g' %{buildroot}%{_kde4_includedir}/nepomuk2/queryinterface.h
-sed -i -e 's!QUERYSERVICEINTERFACE_H_[0-9]*!QUERYSERVICEINTERFACE_H!g' %{buildroot}%{_kde4_includedir}/nepomuk2/queryserviceinterface.h
 
 %check
 desktop-file-validate %{buildroot}%{_kde4_datadir}/applications/kde4/nepomukbackup.desktop
@@ -177,19 +174,6 @@ make -C %{_target_platform}/autotests/test test  ||:
 
 
 %changelog
-* Wed Sep 06 2017 Jan Grulich <jgrulich@redhat.com> - 4.10.5-6
-- Rebuild exiv2
-  Resolves: bz#1488011
-
-* Tue Mar 18 2014 Than Ngo <than@redhat.com> - 4.10.5-5
-- fix multilib issue
-
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 4.10.5-4
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.10.5-3
-- Mass rebuild 2013-12-27
-
 * Wed Jul 24 2013 Daniel Vrátil <dvratil@redhat.com> - 4.10.5-2
 - Resolves: bz#987030 - shebang with /usr/bin/env
 
