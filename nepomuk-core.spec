@@ -9,7 +9,7 @@
 
 Name:    nepomuk-core
 Version: 4.10.5
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Nepomuk Core utilities and libraries
 
 License: LGPLv2 or LGPLv3
@@ -177,7 +177,11 @@ make -C %{_target_platform}/autotests/test test  ||:
 
 
 %changelog
-* Tue Mar 18 2014 Than Ngo <than@redhat.com> 4.10.5-5
+* Wed Sep 06 2017 Jan Grulich <jgrulich@redhat.com> - 4.10.5-6
+- Rebuild exiv2
+  Resolves: bz#1488011
+
+* Tue Mar 18 2014 Than Ngo <than@redhat.com> - 4.10.5-5
 - fix multilib issue
 
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 4.10.5-4
